@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="day_colorPrimary">#3E7AF2</color>
+    <color name="day_colorPrimaryDark">#3E7AF2</color>
+    <color name="day_colorAccent">#ff99cc00</color>
+    <color name="gray">#ff888888</color>
+    <color name="black_trans">#5c000000</color>
+    <color name="bottomNavBackground">#f9f7f7</color>
+    <color name="colorWanStyle">#01d2fb</color>
+    <color name="colorNavNormal">#707070</color>
+    <color name="textColor">#000</color>
+    <color name="assist">#3cdc86</color>
+    <color name="transparent">#00000000</color>
+    <color name="ripple_dark">#11000000</color>
+    <color name="foreground_top">#f5f5f5</color>
+    <color name="text_second">#666666</color>
+    <color name="text_surface">#333333</color>
+    <color name="accent">#f86734</color>
+</resources>

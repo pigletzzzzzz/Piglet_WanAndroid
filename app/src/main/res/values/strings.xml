@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">玩安卓</string>
+
+    <string name="login">登\t\t录</string>
+    <string name="registered">注\t\t册</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="null_text">无数据</string>
+
+    <string name="home">首页</string>
+    <string name="system">知识体系</string>
+    <string name="wx">公众号</string>
+    <string name="project">项目</string>
+    <string name="person">我的</string>
+    <string name="zfz">分享者</string>
+    <string name="zz">作者</string>
+    <string name="yhm">用户名:</string>
+    <string name="dj">等\t\t\级:</string>
+</resources>

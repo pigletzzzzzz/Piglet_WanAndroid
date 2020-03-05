@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:id="@+id/rl_login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/login"
+        android:fadingEdge="none"
+        android:scrollbars="none">
+
+
+        <RelativeLayout
+            android:id="@+id/login"
+            android:layout_width="fill_parent"
+            android:layout_height="400dp">
+
+
+            <View
+                android:id="@+id/dash_line"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/login_edit_account"
+                android:layout_margin="10dp"
+                android:background="@null" />
+
+
+            <com.xmobile.pppdemonew.ui.views.ClearEditText
+                android:id="@+id/login_edit_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btnLogin"
+                android:layout_alignRight="@+id/btnLogin"
+                android:layout_below="@id/dash_line"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/login_edittext"
+                android:drawableLeft="@mipmap/password"
+                android:hint="密码"
+                android:imeOptions="actionDone"
+                android:maxLength="16"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="50dp"
+                android:paddingTop="@dimen/MyCheckBox_fontsize"
+                android:password="true"
+                android:saveEnabled="true"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="#ffffffff" />
+
+            <com.xmobile.pppdemonew.ui.views.ClearEditText
+                android:id="@+id/login_edit_pwd_again"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btnLogin"
+                android:layout_alignRight="@+id/btnLogin"
+                android:layout_below="@id/login_edit_pwd"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="@dimen/sp_20"
+                android:background="@drawable/login_edittext"
+                android:drawableLeft="@mipmap/password"
+                android:hint="密码"
+                android:imeOptions="actionDone"
+                android:maxLength="16"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="50dp"
+                android:paddingTop="@dimen/MyCheckBox_fontsize"
+                android:password="true"
+                android:saveEnabled="true"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="#ffffffff" />
+
+
+
+            <Button
+                android:id="@+id/btn_pull_down"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignBaseline="@id/login_edit_account"
+                android:layout_alignBottom="@id/login_edit_account"
+                android:layout_alignRight="@id/login_edit_account"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25.0dip"
+                android:layout_marginTop="-2.0dip"
+                android:background="@mipmap/login_pull_down"
+                android:visibility="invisible" />
+
+
+
+            <TextView
+                android:id="@+id/show_hide"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignBaseline="@id/login_edit_pwd"
+                android:layout_alignBottom="@id/login_edit_pwd"
+                android:layout_alignRight="@id/login_edit_pwd"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@mipmap/see"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/show_hide_again"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignBaseline="@id/login_edit_pwd_again"
+                android:layout_alignBottom="@id/login_edit_pwd_again"
+                android:layout_alignRight="@id/login_edit_pwd_again"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@mipmap/see"
+                android:gravity="center_vertical" />
+
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/login_edit_pwd_again"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/login_edittext_dl"
+                android:focusable="false"
+                android:text="@string/registered"
+                android:textColor="@color/foreground_top"
+                android:textSize="@dimen/btn_login_text_size" />
+
+
+            <com.xmobile.pppdemonew.ui.views.ClearEditText
+                android:id="@+id/login_edit_account"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btnLogin"
+                android:layout_alignLeft="@+id/login_edit_pwd"
+                android:layout_alignRight="@+id/btnLogin"
+                android:layout_alignStart="@+id/login_edit_pwd"
+                android:layout_below="@+id/tevtitle"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/login_edittext"
+                android:drawableLeft="@mipmap/user"
+                android:gravity="center_vertical"
+                android:hint="帐号"
+                android:inputType="textVisiblePassword"
+                android:maxLength="93"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dip"
+                android:paddingTop="@dimen/login_input_top"
+                android:saveEnabled="true"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="#ffffffff" />
+
+            <TextView
+                android:id="@+id/tevtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorNavNormal"
+                android:textSize="23sp"
+                android:text="欢迎注册玩安卓"/>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</layout>

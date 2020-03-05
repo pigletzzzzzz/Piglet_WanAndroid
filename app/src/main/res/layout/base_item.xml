@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.xmobile.pppdemonew.data.bean.Article" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/base_bg"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5">
+
+        <LinearLayout
+            android:id="@+id/aut_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tx_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textSize="@dimen/sp_13"
+                android:text="@{TextUtils.isEmpty(data.author) ? @string/zfz : @string/zz}"
+                tools:text="作者"/>
+
+            <TextView
+                android:id="@+id/base_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textSize="@dimen/sp_13"
+                android:text="@{TextUtils.isEmpty(data.author) ? data.shareUser : data.author}"
+                tools:text="刘纯贵"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/base_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textSize="@dimen/sp_13"
+            android:text="@{data.niceDate}"
+            tools:text="一小时前"/>
+
+        <TextView
+            android:id="@+id/artile_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_below="@+id/aut_info"
+            android:textSize="@dimen/sp_18"
+            android:text="@{data.title}"
+            tools:text="app的二次开发"/>
+
+        <TextView
+            android:id="@+id/article_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/artile_title"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textSize="@dimen/sp_13"
+            android:text="@{data.superChapterName}"
+            tools:text="广场"/>
+
+        <ImageView
+            android:id="@+id/zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/artile_title"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/read_heart_n"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</layout>
