@@ -11,16 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.android.flexbox.FlexboxLayout;
 import com.xmobile.pppdemonew.R;
 import com.xmobile.pppdemonew.data.bean.SystemBean;
-import com.xmobile.pppdemonew.data.bean.SystemNBean;
-import com.xuexiang.xui.adapter.recyclerview.BaseRecyclerAdapter;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;

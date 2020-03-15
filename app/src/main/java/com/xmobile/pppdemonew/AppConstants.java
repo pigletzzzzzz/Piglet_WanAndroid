@@ -11,4 +11,5 @@ public class AppConstants {
     public static final String USERID = "USERID";
     public static final String RANK = "RANK";
     public static final String COINCOUNT = "COINCOUNT";
+    public static final String COOKIE = "COOKIE";
 }

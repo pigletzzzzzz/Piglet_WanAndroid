@@ -19,12 +19,9 @@ import java.util.List;
 public class MyLevelViewModel extends BaseListPagedViewModel<MyLevelBean> {
 
     private IRepository repository= RepositoryFactory.createOrgetRepository();
-    private String username;
-    private String password;
-
 
     @Override
     public LiveData<Resource<List<MyLevelBean>>> getModels() {
-        return repository.getMyLevel(page+1);
+        return repository.getMyLevel(page);
     }
 }

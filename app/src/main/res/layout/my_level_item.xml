@@ -33,7 +33,7 @@
             android:layout_alignParentRight="true"
             android:textColor="@color/day_colorPrimary"
             android:textSize="@dimen/sp_15"
-            android:text="@{data.coinCount}"
+            android:text='@{"+"+data.coinCount}'
             tools:text="+31" />
 
         <TextView

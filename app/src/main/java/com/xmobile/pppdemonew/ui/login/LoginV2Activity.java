@@ -29,7 +29,9 @@ import com.xmobile.pppdemonew.data.bean.MyLevelBean;
 import com.xmobile.pppdemonew.data.bean.ReposiLoginBean;
 import com.xmobile.pppdemonew.data.bean.UserInfoBean;
 import com.xmobile.pppdemonew.databinding.ActivityLoginV2Binding;
+import com.xmobile.pppdemonew.ui.my.MyOpenActivity;
 import com.xmobile.pppdemonew.ui.my.mylevel.MyLevelViewModel;
+import com.xmobile.pppdemonew.utils.CookieUtil;
 import com.xmobile.pppdemonew.utils.IMeiUtils;
 import com.xmobile.pppdemonew.utils.ImageDecode;
 import com.xmobile.xbiz.SessionManage;
@@ -46,11 +48,14 @@ import com.xmobile.xlogger.XLogger;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import io.reactivex.functions.Consumer;
+import okhttp3.Cookie;
 
 public class LoginV2Activity extends BaseActivity {
     ActivityLoginV2Binding binding;
@@ -61,11 +66,38 @@ public class LoginV2Activity extends BaseActivity {
         super.initViews(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login_v2);
         loginViewModel = new LoginViewModel();
+        ShowOrHidePWD();
 
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goLogin();
+            }
+        });
+        binding.forgetPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginV2Activity.this, RegisterV2Activity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void ShowOrHidePWD(){
+        binding.showHide.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        binding.loginEditPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        binding.showHide.setBackgroundResource(R.mipmap.inputsee);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        binding.loginEditPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        binding.showHide.setBackgroundResource(R.mipmap.inputhide);
+                        break;
+                }
+                return true;
             }
         });
     }
@@ -84,6 +116,17 @@ public class LoginV2Activity extends BaseActivity {
                     SharedPreferencesUtils.putT(LoginV2Activity.this, AppConstants.USERNAME,username);
                     SharedPreferencesUtils.putT(LoginV2Activity.this, AppConstants.PASSWORK,password);
                     getUserInfo();
+
+                    Map<String,String> userName = new HashMap<>();
+                    userName.put("loginUserName",username);
+                    Map<String,String> userPass = new HashMap<>();
+                    userPass.put("loginUserPassword",password);
+//                    CookieUtil.setCookie(LoginV2Activity.this,false,BuildConfig.API_HOST,userName);
+//                    CookieUtil.setCookie(LoginV2Activity.this,false,BuildConfig.API_HOST,userPass);
+                    CookieUtil.setCookieMaxAge(LoginV2Activity.this,true,BuildConfig.API_HOST,"loginUserName",username,60 * 60);
+                    CookieUtil.setCookieMaxAge(LoginV2Activity.this,true,BuildConfig.API_HOST,"loginUserPassword",password,60 * 60);
+                    SharedPreferencesUtils.putT(LoginV2Activity.this,AppConstants.COOKIE,CookieUtil.getCookie(BuildConfig.API_HOST));
+
                 }else if (loginBeanResource.status == Status.ERROR){
                     ToastUtils.error(LoginV2Activity.this,loginBeanResource.message);
                 }
@@ -106,7 +149,7 @@ public class LoginV2Activity extends BaseActivity {
                             LiveEventBus.get().with("userInfo").post(true);
                             finish();
                         }else if (userInfoBeanResource.status == Status.ERROR){
-                            ToastUtils.error(LoginV2Activity.this,userInfoBeanResource.message);
+                            ToastUtils.error(LoginV2Activity.this,"用户名或密码错误！");
                         }
                     }
                 });

@@ -33,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/day_colorPrimary"
                 android:textSize="@dimen/sp_13"
                 android:text="@{TextUtils.isEmpty(data.author) ? @string/zfz : @string/zz}"
                 tools:text="作者"/>
@@ -54,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/dp_10"
+            android:textColor="@color/day_colorPrimary"
             android:textSize="@dimen/sp_13"
             android:text="@{data.niceDate}"
             tools:text="一小时前"/>
@@ -86,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/artile_title"
+            android:visibility="gone"
             android:layout_marginRight="@dimen/dp_10"
             android:src="@mipmap/read_heart_n"
             android:layout_alignParentRight="true"/>

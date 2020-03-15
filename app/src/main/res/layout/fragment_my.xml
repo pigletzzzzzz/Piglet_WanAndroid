@@ -163,10 +163,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:singleLine="true"
-                    android:text=""
+                    android:text="请登录！"
                     android:textColor="@color/text_second"
-                    android:textSize="@dimen/sp_12"
-                    tools:text="520" />
+                    android:textSize="@dimen/sp_12" />
 
                 <ImageView
                     android:layout_width="13dp"

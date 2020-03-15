@@ -97,6 +97,13 @@ public class WebViewFragment extends BaseFragment {
                 super.onProgressChanged(view, newProgress);
             }
         });
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
     }
 
 }

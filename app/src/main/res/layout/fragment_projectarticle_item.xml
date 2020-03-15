@@ -71,7 +71,7 @@
             android:layout_alignBottom="@+id/tv_author"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:textColor="@color/black_trans"
+            android:textColor="@color/day_colorPrimary"
             android:textSize="@dimen/sp_12"
             android:text="@{data.niceDate}"
             tools:text="21小时前" />
@@ -163,6 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/dp_10"
             android:layout_below="@+id/ll_middle"
+            android:visibility="gone"
             android:layout_alignParentRight="true"
             android:src="@mipmap/read_heart_n"/>
 

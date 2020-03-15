@@ -20,6 +20,7 @@ import com.xmobile.pppdemonew.ui.login.LoginV2Activity;
 import com.xmobile.pppdemonew.ui.my.mylevel.MyLevelActivity;
 import com.xmobile.pppdemonew.ui.my.mylevel.MyLevelViewModel;
 import com.xmobile.pppdemonew.ui.my.ranking.RankingActivity;
+import com.xmobile.pppdemonew.utils.CookieUtil;
 import com.xmobile.pppdemonew.utils.SharedPreferencesUtils;
 import com.xmobile.xframework.mvvm.data.Resource;
 import com.xmobile.xframework.ui.BaseFragmentBing;
@@ -42,16 +43,19 @@ public class MyFragment extends BaseFragmentBing<FragmentMyBinding> {
             String level = SharedPreferencesUtils.getT(getActivity(),AppConstants.LEVEL,"");
             String userid = SharedPreferencesUtils.getT(getActivity(),AppConstants.USERID,"");
             String rank = SharedPreferencesUtils.getT(getActivity(),AppConstants.RANK,"");
+            String coincount = SharedPreferencesUtils.getT(getActivity(),AppConstants.COINCOUNT,"");
             XLogger.e("MyFragment"+","+username+","+userid+","+level+","+rank);
             binding.username.setText(username);
             binding.userId.setText(userid);
             binding.userLevel.setText("等级"+level);
             binding.userRanking.setText(rank);
+            binding.tvCount.setText(coincount);
         }else {
             binding.username.setText("请登录");
             binding.userId.setText("-");
             binding.userLevel.setText("等级0");
             binding.userRanking.setText("-");
+            binding.tvCount.setText("请登录!");
         }
 
         LiveEventBus.get().with("userInfo", Boolean.class)
@@ -63,10 +67,12 @@ public class MyFragment extends BaseFragmentBing<FragmentMyBinding> {
                     String level = SharedPreferencesUtils.getT(getActivity(),AppConstants.LEVEL,"");
                     String userid = SharedPreferencesUtils.getT(getActivity(),AppConstants.USERID,"");
                     String rank = SharedPreferencesUtils.getT(getActivity(),AppConstants.RANK,"");
+                    String coincount = SharedPreferencesUtils.getT(getActivity(),AppConstants.COINCOUNT,"");
                     binding.username.setText(username);
                     binding.userId.setText(userid);
                     binding.userLevel.setText("等级"+level);
                     binding.userRanking.setText(rank);
+                    binding.tvCount.setText(coincount);
                 }
             }
         });
@@ -90,11 +96,15 @@ public class MyFragment extends BaseFragmentBing<FragmentMyBinding> {
                 SharedPreferencesUtils.putT(getActivity(),AppConstants.RANK,"");
                 SharedPreferencesUtils.putT(getActivity(),AppConstants.USERID,"");
                 SharedPreferencesUtils.putT(getActivity(),AppConstants.LEVEL,"");
+                SharedPreferencesUtils.putT(getActivity(),AppConstants.COINCOUNT,"");
 
                 binding.username.setText("请登录");
                 binding.userId.setText("-");
                 binding.userLevel.setText("等级0");
                 binding.userRanking.setText("-");
+                binding.tvCount.setText("请登录!");
+
+                CookieUtil.clear(getActivity());
             }
         });
 
@@ -106,13 +116,29 @@ public class MyFragment extends BaseFragmentBing<FragmentMyBinding> {
             }
         });
 
-        binding.llMyIntegral.setOnClickListener(new View.OnClickListener() {
+        binding.llMyOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RankingActivity.class);
+                Intent intent = new Intent(getActivity(), MyOpenActivity.class);
                 getActivity().startActivity(intent);
             }
         });
+
+        binding.llMyExplain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutMyActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+//        binding.llMyIntegral.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), RankingActivity.class);
+//                getActivity().startActivity(intent);
+//            }
+//        });
     }
 
 }

@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.xmobile.pppdemonew.R;
 import com.xmobile.pppdemonew.data.bean.Article;
 import com.xmobile.pppdemonew.databinding.FragmentHomeBinding;
 import com.xmobile.pppdemonew.ui.webview.WebViewActivity;
@@ -23,6 +25,7 @@ public class HomeFragment extends BaseRecyclePagedFragment<Article> {
     public void initViews(View view, @Nullable Bundle savedInstanceState) {
         super.initViews(view, savedInstanceState);
         toolbar.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -42,4 +45,5 @@ public class HomeFragment extends BaseRecyclePagedFragment<Article> {
         intent.putExtra("title",article.getTitle());
         getActivity().startActivity(intent);
     }
+
 }

@@ -23,6 +23,9 @@
         <activity android:name=".ui.webview.WebViewActivity" />
         <activity android:name=".ui.my.mylevel.MyLevelActivity" />
         <activity android:name=".ui.my.ranking.RankingActivity" />
+        <activity android:name=".ui.my.MyOpenActivity" />
+        <activity android:name=".ui.my.AboutMyActivity" />
+        <activity android:name=".ui.login.RegisterV2Activity" />
         <activity android:name=".ui.main.MainActivity">
             //.ui.splash.SplashActivity
             <intent-filter>

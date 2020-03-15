@@ -1,5 +1,6 @@
 package com.xmobile.pppdemonew.ui.knowledgeSystem.navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.xmobile.pppdemonew.data.bean.Article;
 import com.xmobile.pppdemonew.data.bean.NavigationBean;
 import com.xmobile.pppdemonew.databinding.FragmentSystemItemBinding;
 import com.xmobile.pppdemonew.ui.knowledgeSystem.system.SystemItemViewModel;
+import com.xmobile.pppdemonew.ui.webview.WebViewActivity;
 import com.xmobile.xframework.mvvm.data.Resource;
 import com.xmobile.xframework.mvvm.data.Status;
 import com.xmobile.xframework.ui.BaseFragmentBing;
@@ -49,7 +51,10 @@ public class NavigationFragment extends BaseFragmentBing<FragmentSystemItemBindi
                     navigationAdapter.setOnItemClickListener(new NavigationAdapter.OnItemClickListener() {
                         @Override
                         public void onClick(Article bean, int pos) {
-                            XLogger.e("SystemItemFragment"+bean.getTitle()+","+pos);
+                            Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                            intent.putExtra("link",bean.getLink());
+                            intent.putExtra("title",bean.getTitle());
+                            getActivity().startActivity(intent);
                         }
                     });
                     binding.rv.setAdapter(navigationAdapter);

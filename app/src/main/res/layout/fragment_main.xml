@@ -16,7 +16,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="@dimen/dp_60"
             android:layout_above="@+id/frameContain"
             android:background="@color/day_colorPrimary"
             app:layout_collapseMode="pin"
@@ -29,9 +29,10 @@
                 android:gravity="center"
                 android:lines="1"
                 android:ellipsize="end"
-                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/dp_25"
                 android:text="@string/app_name"
-                android:textColor="@color/transparent"
+                android:layout_marginRight="@dimen/sp_16"
+                android:textColor="@color/bottomNavBackground"
                 android:textSize="20sp" />
 
         </androidx.appcompat.widget.Toolbar>

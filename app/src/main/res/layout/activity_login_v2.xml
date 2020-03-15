@@ -40,44 +40,27 @@
                 android:hint="密码"
                 android:imeOptions="actionDone"
                 android:maxLength="16"
-                android:paddingBottom="10dp"
+                android:paddingBottom="5dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="50dp"
-                android:paddingTop="@dimen/MyCheckBox_fontsize"
+                android:paddingTop="5dp"
                 android:password="true"
                 android:saveEnabled="true"
                 android:singleLine="true"
                 android:text=""
-                android:textColor="@android:color/white"
-                android:textColorHint="#ffffffff" />
-
-
-
-            <Button
-                android:id="@+id/btn_pull_down"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignBaseline="@id/login_edit_account"
-                android:layout_alignBottom="@id/login_edit_account"
-                android:layout_alignRight="@id/login_edit_account"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25.0dip"
-                android:layout_marginTop="-2.0dip"
-                android:background="@mipmap/login_pull_down"
-                android:visibility="invisible" />
-
-
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/gray" />
 
             <TextView
                 android:id="@+id/show_hide"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignBaseline="@id/login_edit_pwd"
                 android:layout_alignBottom="@id/login_edit_pwd"
                 android:layout_alignRight="@id/login_edit_pwd"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:background="@mipmap/see"
+                android:background="@mipmap/inputhide"
                 android:gravity="center_vertical" />
 
 
@@ -122,14 +105,14 @@
                 android:hint="帐号"
                 android:inputType="textVisiblePassword"
                 android:maxLength="93"
-                android:paddingBottom="10dp"
+                android:paddingBottom="5dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dip"
-                android:paddingTop="@dimen/login_input_top"
+                android:paddingTop="5dp"
                 android:saveEnabled="true"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textColorHint="#ffffffff" />
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/gray" />
 
             <TextView
                 android:id="@+id/tevtitle"

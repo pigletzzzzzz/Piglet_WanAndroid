@@ -116,6 +116,7 @@ public class FragmentMain extends BaseFragmentBing<FragmentMainBinding> implemen
                     showAndHideFragment(mFragments[0], mFragments[mPreFragmentPosition]);
                     mPreFragmentPosition = 0;
                     binding.banner.setVisibility(View.VISIBLE);
+                    binding.toolbar.setVisibility(View.VISIBLE);
                     break;
                 case R.id.systemItem:
                     showAndHideFragment(mFragments[1], mFragments[mPreFragmentPosition]);
@@ -127,11 +128,13 @@ public class FragmentMain extends BaseFragmentBing<FragmentMainBinding> implemen
                     showAndHideFragment(mFragments[2], mFragments[mPreFragmentPosition]);
                     mPreFragmentPosition = 2;
                     binding.banner.setVisibility(View.GONE);
+                    binding.toolbar.setVisibility(View.GONE);
                     break;
                 case R.id.projectItem:
                     showAndHideFragment(mFragments[3], mFragments[mPreFragmentPosition]);
                     mPreFragmentPosition = 3;
                     binding.banner.setVisibility(View.GONE);
+                    binding.toolbar.setVisibility(View.GONE);
                     break;
                 case R.id.personItem:
                     showAndHideFragment(mFragments[4], mFragments[mPreFragmentPosition]);

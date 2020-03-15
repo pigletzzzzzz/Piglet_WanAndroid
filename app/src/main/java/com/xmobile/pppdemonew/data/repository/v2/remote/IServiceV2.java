@@ -58,15 +58,19 @@ public interface IServiceV2 {
                                                 @Query("repassword") String repassword);
 
     //获取个人信息
+    @Headers("Cache-Control: max-age=5")
     @GET("lg/coin/userinfo/json")
     Observable<XResponseV1<UserInfoBean>> getUserinfo(@Query("username") String username,
                                                       @Query("password") String password);
 
     //获取个人积分
+    @Headers("Cache-Control: max-age=5")
     @GET("lg/coin/list/{page}/json")
-    Observable<XResponseV1<Articles<MyLevelBean>>> getMyLevel(@Path("page") int page);
+    Observable<XResponseV1<Articles<MyLevelBean>>> getMyLevel(@Header("Set-Cookie") String cookie,
+                                                              @Path("page") int page);
 
     //获取积分排行
+    @Headers("Cache-Control: max-age=5")
     @GET("coin/rank/{page}/json")
     Observable<XResponseV1<Articles<RankingBean>>> getRanking(@Path("page") int page);
 

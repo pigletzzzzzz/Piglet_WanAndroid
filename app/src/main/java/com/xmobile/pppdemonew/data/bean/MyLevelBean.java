@@ -32,7 +32,7 @@ public class MyLevelBean {
     }
 
     public String getLevel(){
-        return desc.substring(desc.indexOf(","));
+        return desc.substring(desc.indexOf("积"));
     }
 
     public int getCoinCount() {

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.goweii:HeartView:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/650acb3dd4b0e662be0851b5f590e631/jars/classes.jar!/" />
+      <root url="file://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/650acb3dd4b0e662be0851b5f590e631/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/modules-2/files-2.1/com.github.goweii/HeartView/1.0.0/a06950924fb5043f48b4b11c8a931c6afd79d7a9/HeartView-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

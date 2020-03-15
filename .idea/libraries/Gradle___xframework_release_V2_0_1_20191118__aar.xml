@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :xframework-release-V2.0.1.20191118:@aar">
+    <CLASSES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/0e1e24624f5b2872879bde9456ce4b08/jars/classes.jar!/" />
+      <root url="file://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/0e1e24624f5b2872879bde9456ce4b08/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

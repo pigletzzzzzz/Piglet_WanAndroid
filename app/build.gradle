@@ -48,12 +48,6 @@ android {
         app {
             buildConfigField "int", "Type", "0"
             buildConfigField "int", "dbVesion", "1"
-            buildConfigField "String", "API_HOST", "\"http://192.168.10.250:8050\""
-        }
-
-        plugin {
-            buildConfigField "int", "Type", "1"
-            buildConfigField "int", "dbVesion", "1"
             buildConfigField "String", "API_HOST", "\"https://www.wanandroid.com\""
         }
     }
@@ -97,7 +91,6 @@ dependencies {
     implementation immersion.bar
     implementation immersion.components
     implementation constraintlayout
-    implementation xui
     implementation appcompat
     implementation recyclerview
     implementation material

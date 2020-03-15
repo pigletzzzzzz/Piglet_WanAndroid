@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.goweii:RevealLayout:1.2.1@aar">
+    <CLASSES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/2b714a3297e29a1affd5e825326ee343/jars/classes.jar!/" />
+      <root url="file://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/2b714a3297e29a1affd5e825326ee343/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/modules-2/files-2.1/com.github.goweii/RevealLayout/1.2.1/844a23b50fbc82b17155620f008522b79393efd9/RevealLayout-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

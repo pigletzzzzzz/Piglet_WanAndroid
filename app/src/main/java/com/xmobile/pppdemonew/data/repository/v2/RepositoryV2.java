@@ -3,6 +3,8 @@ package com.xmobile.pppdemonew.data.repository.v2;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
+import com.xmobile.pppdemonew.AppConstants;
+import com.xmobile.pppdemonew.BuildConfig;
 import com.xmobile.pppdemonew.R;
 import com.xmobile.pppdemonew.XLoginHelper;
 import com.xmobile.pppdemonew.data.bean.Article;
@@ -26,6 +28,8 @@ import com.xmobile.pppdemonew.data.repository.v2.remote.res.LoginResV2;
 import com.xmobile.pppdemonew.data.repository.v2.remote.res.XResponseV1;
 import com.xmobile.pppdemonew.data.repository.v2.remote.res.XResponseV2JSONDeserializerNew;
 import com.xmobile.pppdemonew.data.resource.SimpleNetworkResource;
+import com.xmobile.pppdemonew.utils.CookieUtil;
+import com.xmobile.pppdemonew.utils.SharedPreferencesUtils;
 import com.xmobile.xbiz.SessionManage;
 import com.xmobile.xbiz.XDevice;
 import com.xmobile.xbizv2.SessionManageV2;
@@ -62,12 +66,14 @@ import okhttp3.Request;
 
 
 public class RepositoryV2 implements IRepository {
+    private Context context;
     @Override
     public void init(Context context) {
         SessionManage.setSessionManage(new SessionManageV2());
         GsonUtils.initStrDate();
         GsonUtils.registerTypeAdapter(XRequestV2.class, new XRequestV2JsonSerializer());
         GsonUtils.registerTypeAdapter(XResponseV2.class, new XResponseV2JSONDeserializerNew());
+        this.context = context;
 
     }
 
@@ -128,16 +134,12 @@ public class RepositoryV2 implements IRepository {
             @NonNull
             @Override
             protected Observable<List<MyLevelBean>> createCall() {
-                return RemoteDataV2.getService().getMyLevel(page)
+                String cookie = SharedPreferencesUtils.getT(context, AppConstants.COOKIE,"");
+                return RemoteDataV2.getService().getMyLevel(cookie,page)
                         .map(new Function<XResponseV1<Articles<MyLevelBean>>, List<MyLevelBean>>() {
                             @Override
                             public List<MyLevelBean> apply(XResponseV1<Articles<MyLevelBean>> articlesXResponseV1) throws Exception {
-                                if (articlesXResponseV1.getErrorCode() == 0){
-                                    return articlesXResponseV1.getData().getDatas();
-                                }else {
-                                    XLogger.e("getMyLevel"+articlesXResponseV1.getErrorMsg());
-                                }
-                                return null;
+                                return articlesXResponseV1.getData().getDatas();
                             }
                         });
             }

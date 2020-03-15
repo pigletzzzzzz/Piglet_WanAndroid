@@ -10,7 +10,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="@dimen/dp_60"
             android:layout_above="@+id/frameContain"
             android:background="@color/day_colorPrimary"
             app:layout_collapseMode="pin"
@@ -21,13 +21,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_35"
                 android:background="@color/transparent"
-                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_25"
                 app:elevation="@dimen/dp_5"
                 app:tl_indicator_width="@dimen/dp_0"
                 app:tl_textAllCaps="false"
                 app:tl_textBold="BOTH"
                 app:tl_textSelectColor="@color/bottomNavBackground"
-                app:tl_textUnselectColor="@color/text_second"
+                app:tl_textUnselectColor="@color/black_trans"
                 app:tl_textsize="@dimen/sp_16"
                 />
 

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :xwidgets-release-V2.0.1.20200108:@aar">
+    <CLASSES>
+      <root url="jar://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/f20e78a1bafc2edc5a1a0c708a649f65/jars/classes.jar!/" />
+      <root url="file://D:/Android_gradle/.gradle/caches/transforms-2/files-2.1/f20e78a1bafc2edc5a1a0c708a649f65/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

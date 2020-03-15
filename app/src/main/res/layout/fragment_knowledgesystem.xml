@@ -23,12 +23,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:background="@color/transparent"
-                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_16"
                 app:tabSelectedTextColor="@color/bottomNavBackground"
                 app:tabIndicatorFullWidth="false"
                 app:tabTextAppearance="@style/TabLayoutTextAppearance"
-                app:tabTextColor="@color/text_second"
+                app:tabTextColor="@color/black_trans"
                 />
 
         </androidx.appcompat.widget.Toolbar>

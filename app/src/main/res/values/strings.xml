@@ -18,4 +18,34 @@
     <string name="zz">作者</string>
     <string name="yhm">用户名:</string>
     <string name="dj">等\t\t\级:</string>
+    <string name="by_footer_load_failed">加载失败，请点我重试</string>
+    <string name="by_footer_loading">努力加载中…</string>
+    <string name="by_footer_no_more">没有更多数据了</string>
+    <string name="by_header_hint_normal">下拉刷新</string>
+    <string name="by_header_hint_release">松开刷新</string>
+    <string name="my_open">
+           com.google.code.gson:gson:2.8.5
+        \n com.github.bumptech.glide:glide:4.9.0
+        \n com.facebook.stetho:stetho-okhttp3:1.5.1
+        \n com.github.tbruyelle:rxpermissions:0.10.2
+        \n androidx.constraintlayout:constraintlayout:1.1.2
+        \n androidx.appcompat:appcompat:1.1.0
+        \n com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46
+        \n com.google.android:flexbox:1.0.0
+        \n com.makeramen:roundedimageview:2.3.0
+        \n com.github.goweii:RevealLayout:1.2.1
+        \n com.github.goweii:HeartView:1.0.0
+        \n com.github.xiaohaibin:XBanner:1.6.1
+        \n com.squareup.picasso:picasso:2.5.2
+        \n .
+        \n .
+        \n .
+    </string>
+    <string name="open_text">我的开源\t\t\t\t\t\t\t\t\t\t</string>
+    <string name="my_text">我的说明\t\t\t\t\t\t\t\t\t\t</string>
+    <string name="about_my">
+        自从从事开发，一直流连各大社区，一边羡慕网上大神们做出的各种牛逼APP，一边想自己做一个APP看看。
+        \n当我看到玩安卓https://www.wanandroid.com网站开放API，加上2020年肺炎疫情，超长的假期让我做出了非常简单版的玩安卓APP。
+        \n此APP github：https://github.com/pigletzzzzzz/Piglet_WanAndroid.git
+    </string>
 </resources>

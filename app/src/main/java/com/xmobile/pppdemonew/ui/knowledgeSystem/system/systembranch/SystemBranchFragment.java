@@ -10,8 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.xmobile.pppdemonew.R;
 import com.xmobile.pppdemonew.data.bean.Article;
 import com.xmobile.pppdemonew.data.bean.SystemBean;
+import com.xmobile.pppdemonew.databinding.FragmentSystemBranchBinding;
 import com.xmobile.pppdemonew.databinding.FragmentWechatBinding;
 import com.xmobile.pppdemonew.ui.adapter.TabAdapter;
 import com.xmobile.pppdemonew.ui.knowledgeSystem.system.systembranch.systembranchitem.SystemBranchItemFragment;
@@ -26,7 +28,7 @@ import java.util.List;
  * Created By 刘纯贵
  * Created Time 2020/2/25
  */
-public class SystemBranchFragment extends BaseFragmentBing<FragmentWechatBinding> {
+public class SystemBranchFragment extends BaseFragmentBing<FragmentSystemBranchBinding> {
 
     private int mCurrentItemCount;
     private List<String> tabName = new ArrayList<>();
@@ -36,7 +38,7 @@ public class SystemBranchFragment extends BaseFragmentBing<FragmentWechatBinding
     private SystemBean datas;
 
     @Override
-    protected FragmentWechatBinding getInflate(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup) {
+    protected FragmentSystemBranchBinding getInflate(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup) {
         return binding.inflate(layoutInflater,viewGroup,false);
     }
 
@@ -70,6 +72,13 @@ public class SystemBranchFragment extends BaseFragmentBing<FragmentWechatBinding
                 binding.tabSpl.setCurrentTab(pos);
             }
         }
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
     }
 
 //    /**
